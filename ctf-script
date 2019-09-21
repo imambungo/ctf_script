@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# https://stackoverflow.com/a/12847395/9157799
+stringtohex()
+{
+	echo "$(xxd -p -u <<< "$@")"
+}
+
+# https://stackoverflow.com/a/30084257/9157799
+hextostring()
+{
+	echo "$@" | xxd -r -p
+}

@@ -30,6 +30,11 @@ uppercase()
 	python3 -c "print('$input'.upper())"
 }
 
+hextodecimal()
+{
+	echo "ibase=16; $(uppercase $1)" | bc
+}
+
 # https://stackoverflow.com/a/9605965/9157799
 hextobinary()
 {

@@ -15,7 +15,12 @@ hextostring()
 # https://stackoverflow.com/a/10278539/9157800
 decimaltobinary()
 {
-	echo "obase=2;$1" | bc
+	echo "obase=2; $1" | bc
+}
+
+decimaltohex()
+{
+	echo "obase=16; $1" | bc
 }
 
 # https://www.geeksforgeeks.org/isupper-islower-lower-upper-python-applications/
@@ -23,4 +28,10 @@ uppercase()
 {
 	input="$@"
 	python3 -c "print('$input'.upper())"
+}
+
+# https://stackoverflow.com/a/9605965/9157799
+hextobinary()
+{
+	echo "ibase=16; obase=2; $(uppercase $1)" | bc
 }

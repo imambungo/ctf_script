@@ -21,5 +21,6 @@ decimaltobinary()
 # https://www.geeksforgeeks.org/isupper-islower-lower-upper-python-applications/
 uppercase()
 {
-	python3 -c "print('$@'.upper())"
+	input="$@"
+	python3 -c "print('$input'.upper())"
 }

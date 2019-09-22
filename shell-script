@@ -11,3 +11,15 @@ hextostring()
 {
 	echo "$@" | xxd -r -p
 }
+
+# https://stackoverflow.com/a/10278539/9157800
+decimaltobinary()
+{
+	echo "obase=2;$1" | bc
+}
+
+# https://www.geeksforgeeks.org/isupper-islower-lower-upper-python-applications/
+uppercase()
+{
+	python3 -c "print('$@'.upper())"
+}

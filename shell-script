@@ -45,3 +45,24 @@ pyrun()
 {
 	python3 -c "from python_script import *; $@"
 }
+
+bruteforce_hash256_menggunakan_file()
+{
+	let banyak_password_percobaan="$(numberofline $2)"
+	echo "banyak password percobaan: $banyak_password_percobaan"
+
+	for i in {1..$banyak_password_percobaan}
+	do
+		echoinplace percobaan password ke-$i
+		password_percobaan="$(get_nth_line_of_file $i $2)"
+
+		pyrun "is_password_match_hash256('$password_percobaan', '$1')"
+		if [ $? -eq 0 ]
+		then
+			echo "\n$password_percobaan"
+			return
+		fi
+	done
+
+	echo "\ntidak ketemu"
+}

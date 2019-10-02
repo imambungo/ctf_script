@@ -40,3 +40,8 @@ hextobinary()
 {
 	echo "ibase=16; obase=2; $(uppercase $1)" | bc
 }
+
+pyrun()
+{
+	python3 -c "from python_script import *; $@"
+}

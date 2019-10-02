@@ -1,2 +1,3 @@
 preexec.sh
 __pycache__/*
+*.pyc

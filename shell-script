@@ -66,3 +66,9 @@ bruteforce_hash256_menggunakan_file()
 
 	echo "\ntidak ketemu"
 }
+
+hash256()
+{
+	input="$@"
+	pyrun "print(hash256('$input'))"
+}
